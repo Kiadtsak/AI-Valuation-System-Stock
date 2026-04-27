@@ -11,11 +11,11 @@ from typing import Dict, Tuple, List, Any
 
 # ถ้ายังอยากเก็บ import เดิมไว้ก็ได้ แต่เวอร์ชันนี้จะไม่เรียกใช้ API
 # from loader.load_stock_financial_statement_data_json import FinancialsStatement
-from processing.calculater_all import calculate_ratios_by_year
-from Valuetion_model.valuetion_financials import run_valuation_for_symbol  #== Valuetion
-from services.financials_statement import FinancialsStatement
+from Backend.calculater_all import calculate_ratios_by_year
+from Backend.valuetion_financials import run_valuation_for_symbol  #== Valuetion
+from Backend.financials_provider import FinancialsStatement
 # =========================
-# Config
+# Configs
 # =========================
 DATA_DIR = "data"
 EXPORT_DIR = "expotes"
@@ -106,29 +106,18 @@ def load_financial_data(symbol: str,force_refresh: bool = False) -> Dict[str, An
         # ถ้า fefresh และมีไฟล์เกิมอยู่ ให้ลบทิ้ง
         if force_refresh and os.path.exists(path):
             try:
-                os.rename(path)
+                os.remove(path)
                 print("♻️ ลบไฟล์เก่าเพื่อรีเฟรชจาก API")
             except Exception as e:
                 print(f"⚠️ ลบไฟล์เดิมไม่สำเร็จ: {e}")                                               #
         # ลองหาแบบ case-insensitive เผื่อสะกดพิมพ์เล็กใหญ่ไม่ตรง
         print(f"ไม่พบไฟล์/บังคับรีเฟรช -> ดึงจาก API สำหรับ {symbol}...")
-    #if os.path.exists(path):
-    #    with open(path, "r", encoding="utf-8") as f:
-    #        data = json.load(f)
-    #    print(f"📂 โหลดข้อมูลจากไฟล์: {path}")
-    #    return data
         
-    #print(f"🔄 ไม่พบไฟล์ {path} หรือสั่ง refresh -> ดึงจาก API ...")
         fs = FinancialsStatement(symbol=symbol)
         data = fs.load_data_json_or_api(force=True) # บังคับโหลดจาก API
 
-        #if data and not os.path.exists(path):
-        #    with open(path, "w", encoding="utf-8") as f:
-        #        json.dump(data, f, ensure_ascii=False, indent=2)
         if not data:
             raise RuntimeError(f"ไม่พบข้อมูลการเงินสำหรับ {symbol} หลังดึงจาก API")
-        #print(f"📂 บันทึกข้อมูลลงไฟล์: {path}")
-        #return data
 
         with open(path, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)

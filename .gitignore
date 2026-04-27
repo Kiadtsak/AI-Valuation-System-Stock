@@ -9,4 +9,9 @@ data/*.tsv
 __pycache__/
 *.pyc
 
+frontend
+Analysis_System_stock.code-workspace
+errors.log
+.sixth
+.sixth/skills
 

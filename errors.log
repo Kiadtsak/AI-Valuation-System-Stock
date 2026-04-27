@@ -967,3 +967,83 @@ Traceback (most recent call last):
     if len(data) > 0:
        ^^^^^^^^^
 TypeError: object of type 'NoneType' has no len()
+2026-01-05 19:13:49,694 - ERROR - เกิดข้อผิดพลาดในการประมวลผลข้อมูลหุ้น NVDA
+Traceback (most recent call last):
+  File "/Users/npphone6622hotmail.com/Desktop/Analysis_System_Stock/main.py", line 268, in main
+    ratios = calculate_ratios(income, balance, cashflow, basic, years)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/npphone6622hotmail.com/Desktop/Analysis_System_Stock/main.py", line 191, in calculate_ratios
+    raise ValueError("calculate_ratios_by_year ควรคืนค่า dict")
+ValueError: calculate_ratios_by_year ควรคืนค่า dict
+2026-01-05 20:22:02,719 - ERROR - เกิดข้อผิดพลาดในการประมวลผลข้อมูลหุ้น NVDA
+Traceback (most recent call last):
+  File "/Users/npphone6622hotmail.com/Desktop/Analysis_System_Stock/main.py", line 268, in main
+    ratios = calculate_ratios(income, balance, cashflow, basic, years)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/npphone6622hotmail.com/Desktop/Analysis_System_Stock/main.py", line 191, in calculate_ratios
+    raise ValueError("calculate_ratios_by_year ควรคืนค่า dict")
+ValueError: calculate_ratios_by_year ควรคืนค่า dict
+2026-01-05 20:28:53,309 - ERROR - เกิดข้อผิดพลาดในการประมวลผลข้อมูลหุ้น NVDA
+Traceback (most recent call last):
+  File "/Users/npphone6622hotmail.com/Desktop/Analysis_System_Stock/main.py", line 268, in main
+    ratios = calculate_ratios(income, balance, cashflow, basic, years)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/npphone6622hotmail.com/Desktop/Analysis_System_Stock/main.py", line 191, in calculate_ratios
+    raise ValueError("calculate_ratios_by_year ควรคืนค่า dict")
+ValueError: calculate_ratios_by_year ควรคืนค่า dict
+2026-01-05 20:31:04,180 - ERROR - เกิดข้อผิดพลาดในการประมวลผลข้อมูลหุ้น NVDA
+Traceback (most recent call last):
+  File "/Users/npphone6622hotmail.com/Desktop/Analysis_System_Stock/main.py", line 268, in main
+    ratios = calculate_ratios(income, balance, cashflow, basic, years)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/npphone6622hotmail.com/Desktop/Analysis_System_Stock/main.py", line 191, in calculate_ratios
+    raise ValueError("calculate_ratios_by_year ควรคืนค่า dict")
+ValueError: calculate_ratios_by_year ควรคืนค่า dict
+2026-01-05 20:44:36,549 - ERROR - เกิดข้อผิดพลาดในการประมวลผลข้อมูลหุ้น NVDA
+Traceback (most recent call last):
+  File "/Users/npphone6622hotmail.com/Desktop/Analysis_System_Stock/main.py", line 268, in main
+    ratios = calculate_ratios(income, balance, cashflow, basic, years)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/npphone6622hotmail.com/Desktop/Analysis_System_Stock/main.py", line 191, in calculate_ratios
+    raise ValueError("calculate_ratios_by_year ควรคืนค่า dict")
+ValueError: calculate_ratios_by_year ควรคืนค่า dict
+2026-01-05 20:46:38,215 - ERROR - เกิดข้อผิดพลาดในการประมวลผลข้อมูลหุ้น NVDA
+Traceback (most recent call last):
+  File "/Users/npphone6622hotmail.com/Desktop/Analysis_System_Stock/main.py", line 268, in main
+    ratios = calculate_ratios(income, balance, cashflow, basic, years)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/npphone6622hotmail.com/Desktop/Analysis_System_Stock/main.py", line 191, in calculate_ratios
+    raise ValueError("calculate_ratios_by_year ควรคืนค่า dict")
+ValueError: calculate_ratios_by_year ควรคืนค่า dict
+2026-01-05 20:48:37,621 - ERROR - เกิดข้อผิดพลาดในการประมวลผลข้อมูลหุ้น NVDA
+Traceback (most recent call last):
+  File "/Users/npphone6622hotmail.com/Desktop/Analysis_System_Stock/main.py", line 268, in main
+    ratios = calculate_ratios(income, balance, cashflow, basic, years)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/npphone6622hotmail.com/Desktop/Analysis_System_Stock/main.py", line 191, in calculate_ratios
+    raise ValueError("calculate_ratios_by_year ควรคืนค่า dict")
+ValueError: calculate_ratios_by_year ควรคืนค่า dict
+2026-01-05 20:49:27,634 - ERROR - เกิดข้อผิดพลาดในการประมวลผลข้อมูลหุ้น NVDA
+Traceback (most recent call last):
+  File "/Users/npphone6622hotmail.com/Desktop/Analysis_System_Stock/main.py", line 268, in main
+    ratios = calculate_ratios(income, balance, cashflow, basic, years)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/npphone6622hotmail.com/Desktop/Analysis_System_Stock/main.py", line 191, in calculate_ratios
+    raise ValueError("calculate_ratios_by_year ควรคืนค่า dict")
+ValueError: calculate_ratios_by_year ควรคืนค่า dict
+2026-01-05 20:50:03,461 - ERROR - เกิดข้อผิดพลาดในการประมวลผลข้อมูลหุ้น NVDA
+Traceback (most recent call last):
+  File "/Users/npphone6622hotmail.com/Desktop/Analysis_System_Stock/main.py", line 268, in main
+    ratios = calculate_ratios(income, balance, cashflow, basic, years)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/npphone6622hotmail.com/Desktop/Analysis_System_Stock/main.py", line 191, in calculate_ratios
+    raise ValueError("calculate_ratios_by_year ควรคืนค่า dict")
+ValueError: calculate_ratios_by_year ควรคืนค่า dict
+2026-01-05 20:50:25,443 - ERROR - เกิดข้อผิดพลาดในการประมวลผลข้อมูลหุ้น NVDA
+Traceback (most recent call last):
+  File "/Users/npphone6622hotmail.com/Desktop/Analysis_System_Stock/main.py", line 268, in main
+    ratios = calculate_ratios(income, balance, cashflow, basic, years)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/npphone6622hotmail.com/Desktop/Analysis_System_Stock/main.py", line 191, in calculate_ratios
+    raise ValueError("calculate_ratios_by_year ควรคืนค่า dict")
+ValueError: calculate_ratios_by_year ควรคืนค่า dict

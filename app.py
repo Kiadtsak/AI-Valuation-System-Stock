@@ -16,7 +16,7 @@ from main import (
     load_financial_data, validate_data, calculate_ratios,
     export_ratios_to_file, parse_years, EXPORT_JSON
 )
-from Valuetion_model.valuetion_financials import run_valuation_for_symbol
+from Backend.valuetion_financials import run_valuation_for_symbol
 
 app = FastAPI(title="Financials API", version="1.0")
 

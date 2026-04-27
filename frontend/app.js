@@ -99,7 +99,7 @@ const state = {
     const kROE = keys[0], kROA = keys[1] || keys[0], kEBITDA_MARGIN = keys[2] || keys[0], kNET_PROFIT_MATGIN = keys[3] || keys[0],
           kGROSS_PROFIT_MARGIN = keys[4] || keys[0], kOperating_profit_margin = keys[5] || keys[0], kWACC = keys[6] || keys[0], kCost_of_equity = keys[7] || keys[0],
           kUnlevered_free_cash_flow_UFCF = keys[8] || keys[0], kOperating_cash_flow_OCF= keys[9] || keys[0], kFree_cash_flow_FCF= keys[10]|| keys[0], kCurrent_Ratio= keys[11]|| keys[0],
-          kCash_ratio= keys[12]|| keys[0], kEPS= keys[13]|| keys[0], kPE_RATIO= keys[14]|| keys[0], kOwners_Earnings= keys[15]|| keys[0];
+          kCash_ratio= keys[12]|| keys[0], kEPS= keys[13]|| keys[0], kPE_RATIO= keys[14]|| keys[0], kOwners_Earnings= keys[15]|| keys[0], kPBV_Ratio = keys[16]|| keys[0];
   
     setupOrUpdateLine("ROE", years, s(kROE), kROE);
     setupOrUpdateLine("RoA", years, s(kROA), kROA);
@@ -108,8 +108,9 @@ const state = {
     setupOrUpdateChart("GROSS_PROFIT_MARGIN", "line", years, s(kGROSS_PROFIT_MARGIN), kGROSS_PROFIT_MARGIN);
     setupOrUpdateLine("PE_Ratio", years, s(kPE_RATIO), kPE_RATIO,);
     setupOrUpdateChart("GROSS_PROFIT_MARGIN", "line",  years, s(kGROSS_PROFIT_MARGIN), kGROSS_PROFIT_MARGIN);
-  
+    
     setupOrUpdateChart("EPS", "line", years, s(kEPS), kEPS);
+  
   }
   
   function rowsToRatios(rows){
