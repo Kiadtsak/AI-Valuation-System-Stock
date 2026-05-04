@@ -1,0 +1,42 @@
+# ───── Secrets ─────
+.env
+.env.local
+.env.production
+.env.*.local
+
+# ───── Node ─────
+node_modules/
+.next/
+out/
+dist/
+build/
+.turbo/
+
+# ───── Python ─────
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# ───── Logs ─────
+*.log
+logs/
+npm-debug.log*
+
+# ───── Database ─────
+*.db
+*.sqlite
+*.sqlite3
+
+# ───── Docker ─────
+docker-compose.override.yml
+
+# ───── OS ─────
+.DS_Store
+Thumbs.db
+
+# ───── IDE ─────
+.vscode/
+.idea/
+*.swp

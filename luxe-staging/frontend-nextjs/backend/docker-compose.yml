@@ -1,0 +1,83 @@
+version: '3.9'
+
+services:
+  api:
+    build: .
+    container_name: luxe-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=postgresql://luxe:luxepass@postgres:5432/luxe
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - luxe-net
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: luxe-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: luxe
+      POSTGRES_USER: luxe
+      POSTGRES_PASSWORD: luxepass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U luxe -d luxe"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks:
+      - luxe-net
+
+  redis:
+    image: redis:7-alpine
+    container_name: luxe-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks:
+      - luxe-net
+
+  # Optional: pgAdmin for DB inspection
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: luxe-pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@luxe.local
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    profiles: [debug]
+    depends_on:
+      - postgres
+    networks:
+      - luxe-net
+
+volumes:
+  postgres-data:
+  redis-data:
+
+networks:
+  luxe-net:
+    driver: bridge

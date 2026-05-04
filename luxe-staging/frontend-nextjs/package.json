@@ -1,0 +1,37 @@
+{
+  "name": "luxe-capital-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Luxe Capital — Stock Intelligence SaaS (single-command dev environment)",
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "dev:logs": "concurrently --kill-others-on-fail --raw \"npm:dev:backend\" \"npm:dev:frontend\"",
+    "dev:backend": "node scripts/run-backend.js",
+    "dev:frontend": "node scripts/run-frontend.js",
+    "dev:infra": "node scripts/run-infra.js",
+    "dev:migrate": "node scripts/run-migrate.js",
+
+    "stop": "node scripts/stop.js",
+    "reset": "node scripts/reset.js",
+    "logs": "docker compose -f backend/docker-compose.yml logs -f",
+    "logs:db": "docker compose -f backend/docker-compose.yml logs -f postgres",
+    "logs:redis": "docker compose -f backend/docker-compose.yml logs -f redis",
+
+    "preflight": "node scripts/preflight.js",
+    "setup": "node scripts/setup.js",
+
+    "build": "npm run build --prefix frontend",
+    "test:backend": "cd backend && pytest -v",
+    "test:frontend": "cd frontend && npm test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "wait-on": "^8.0.1",
+    "chalk": "^4.1.2",
+    "dotenv": "^16.4.7"
+  },
+  "engines": {
+    "node": ">=18.17.0",
+    "npm": ">=9.0.0"
+  }
+}

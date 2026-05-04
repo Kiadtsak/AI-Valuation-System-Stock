@@ -1,0 +1,55 @@
+# ────── SECRETS — NEVER COMMIT ──────
+.env
+.env.local
+.env.production
+.env.*.local
+*.pem
+*.key
+*.cert
+secrets/
+
+# ────── Python ──────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# ────── Testing ──────
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# ────── Logs ──────
+logs/
+*.log
+
+# ────── Data files (don't commit large data) ──────
+data/
+*.csv
+*.parquet
+*.db
+*.sqlite
+
+# ────── IDE ──────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# ────── Docker ──────
+docker-compose.override.yml

@@ -14,4 +14,8 @@ Analysis_System_stock.code-workspace
 errors.log
 .sixth
 .sixth/skills
+.venv
 
+expotes/
+Blackend/CashFlowModel.py.bak
+Blackend/calculate_all.py.bak
