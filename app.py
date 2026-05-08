@@ -9,6 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
+
 ROOT = Path(__file__).resolve().parent
 RESULT_PATH = ROOT / "expotes" / "result.json"
 

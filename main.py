@@ -83,8 +83,6 @@ def _pick_key(d: Dict[str, Any], candidates: List[str]) -> str | None:
             return k
     return None
 
-#from loader.load_stock_financial_statement_data_json import FinancialsStatement
-#from loader.financials_statement import FinancialsStatement
 def load_financial_data(symbol: str,force_refresh: bool = False) -> Dict[str, Any]:
     """
     โหลด JSON ดิบจาก data/{symbol}_financials.json
@@ -174,7 +172,6 @@ def calculate_ratios(
     คืนค่า: {year: {...metrics...}}
     หมายเหตุ: calculate_ratios_by_year ควรรองรับ list ของปี
     """
-    #return calculate_ratios_by_year(income, balance, cashflow, basic, year=years)
     ratios = calculate_ratios_by_year(income, balance, cashflow, basic, year=years)
     if not isinstance(ratios, dict):
         raise ValueError("calculate_ratios_by_year ควรคืนค่า dict")
@@ -242,8 +239,6 @@ def main() -> int:
 
     start = time.time()
     symbol = args.symbol.upper()
-
-    #financial_data = load_financial_data(symbol, force_refresh=args.refresh)
 
     try:
         years = parse_years(args.years)

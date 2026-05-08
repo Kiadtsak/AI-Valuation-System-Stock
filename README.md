@@ -116,10 +116,6 @@ Financial Dashboard — visualize metrics over the 5-year period.
 NVDA_financials.json: Contains all financial statements (2021–2025)
 
 👨‍💻 Example Usage in Python
-python
-คัดลอก
-แก้ไข
-import json
 
 with open("NVDA_financials.json", "r") as f:
     data = json.load(f)

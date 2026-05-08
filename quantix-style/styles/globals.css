@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --font-display: 'Instrument Serif';
+  --font-sans: 'Manrope';
+  --font-mono: 'JetBrains Mono';
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #0a0a14;
+  color: #f4f4f8;
+  font-family: var(--font-sans), -apple-system, sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  overflow-x: hidden;
+}
+
+/* ───── Scrollbar ───── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(155, 140, 255, 0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(155, 140, 255, 0.3);
+}
+
+/* ───── Card glassmorphism ───── */
+.card-glass {
+  background: linear-gradient(135deg, rgba(35, 35, 60, 0.5) 0%, rgba(20, 20, 35, 0.7) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-glass:hover {
+  border-color: rgba(155, 140, 255, 0.2);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(155, 140, 255, 0.08),
+    inset 0 1px 0 rgba(155, 140, 255, 0.1);
+}
+
+/* ───── Pill badges ───── */
+.pill-positive {
+  background: linear-gradient(135deg, rgba(61, 220, 132, 0.15) 0%, rgba(61, 220, 132, 0.05) 100%);
+  color: #3ddc84;
+  border: 1px solid rgba(61, 220, 132, 0.2);
+}
+
+.pill-negative {
+  background: linear-gradient(135deg, rgba(255, 85, 119, 0.15) 0%, rgba(255, 85, 119, 0.05) 100%);
+  color: #ff5577;
+  border: 1px solid rgba(255, 85, 119, 0.2);
+}
+
+/* ───── Background glow ───── */
+.bg-violet-glow {
+  background:
+    radial-gradient(ellipse 80% 50% at 0% 0%, rgba(155, 140, 255, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(155, 140, 255, 0.1) 0%, transparent 50%);
+}
+
+/* ───── Star field for empty space ───── */
+.bg-stars {
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(1px 1px at 60% 80%, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(1px 1px at 80% 20%, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(1px 1px at 30% 70%, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(1px 1px at 90% 50%, rgba(255, 255, 255, 0.3), transparent);
+  background-size: 100% 100%;
+}
+
+/* ───── Shimmer for loading ───── */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(155, 140, 255, 0.05) 0%,
+    rgba(155, 140, 255, 0.15) 50%,
+    rgba(155, 140, 255, 0.05) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ───── Live indicator ───── */
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3ddc84;
+  box-shadow: 0 0 8px rgba(61, 220, 132, 0.6);
+  animation: pulseSoft 2s ease-in-out infinite;
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ───── Selectable text ───── */
+::selection {
+  background: rgba(155, 140, 255, 0.3);
+  color: white;
+}
+
+/* ───── Focus rings ───── */
+*:focus-visible {
+  outline: 2px solid rgba(155, 140, 255, 0.5);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ───── Numbers (financial) ───── */
+.num-display {
+  font-family: var(--font-sans);
+  font-feature-settings: 'tnum' 1, 'lnum' 1;
+  letter-spacing: -0.01em;
+}
+
+.num-mono {
+  font-family: var(--font-mono);
+  font-feature-settings: 'tnum' 1;
+}
+
+/* ───── Sidebar item active state ───── */
+.sidebar-item-active {
+  background: linear-gradient(90deg, rgba(155, 140, 255, 0.15) 0%, rgba(155, 140, 255, 0.05) 100%);
+  border-left: 2px solid #9b8cff;
+}
+
+.sidebar-item-active::after {
+  content: '';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 16px;
+  background: linear-gradient(180deg, transparent 0%, #9b8cff 50%, transparent 100%);
+  border-radius: 2px;
+}
